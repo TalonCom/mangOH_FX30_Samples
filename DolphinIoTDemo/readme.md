@@ -48,7 +48,13 @@ In this document we use a mangOH Yellow platform, but with small changes in plat
     $ update $LEAF_WORKSPACE/mangOH/build/update_files/yellow.wp77xx.update 192.168.2.2
     ```
 7. Once the update is complete, check octave.sierrawireless.io/device/resources and look in your device resource for **DolphinIoTDemo/ReceivedUARTFrames** resource. This may take a couple minutes to be updated.
-8. Trigger your Self Powered Device to send a frame, this should increase the number of ReceivedUARTFrames counter.
+8. Trigger your Self Powered Device to send a frame, this should increase the number of ReceivedUARTFrames counter. The resource can be seen as follows:
+
+![ ](https://github.com/TalonCom/mangOH_FX30_Samples/blob/master/DolphinIoTDemo/Octave%20DolphinIoTDemo%20Resource.png "Octave DolphineIoTDemo Resource")
+
+9. Configuring a stream of the DolphinIoTDemo resource allows easy visualization of when a frame was send like this:
+
+![ ](https://github.com/TalonCom/mangOH_FX30_Samples/blob/master/DolphinIoTDemo/Octave%20DolphinIoTDemo%20Stream.png "Octave DolphineIoTDemo Stream")
 
 
 ## Serial log
@@ -68,3 +74,15 @@ The serial output should look like:
 May 12 02:24:56 swi-mdm9x28-wp user.info Legato:  INFO | DolphinIoTDemo[26606]/DolphinIoTDemoComponent T=main | main.c _DolphinIoTDemoComponent_COMPONENT_INIT() 82 | Buffer Len = 21  Received bytes from UART2 : 55:00:07:07:01:7A:F6:00:00:2F:1B:2C:A0:01:FF:FF:FF:FF:38:00:DB
 May 12 02:24:56 swi-mdm9x28-wp user.info Legato:  INFO | DolphinIoTDemo[26606]/DolphinIoTDemoComponent T=main | main.c _DolphinIoTDemoComponent_COMPONENT_INIT() 83 | Number of counted UART frames 7 .
 ```
+
+
+## Troubleshoot
+
+* The application is not reporting frames being trigger after power cycle:
+
+	Try stop the application and run it again:
+	
+	` $ app stop DolphinIoTDemo`
+	
+	` $ app start DolphinIoTDemo`
+  
