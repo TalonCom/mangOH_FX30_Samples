@@ -1,0 +1,35 @@
+requires:
+{
+    device:
+    {
+        // replace these devices based on your module
+        [rw]	/dev/ttyHS0	/dev/
+    }
+}
+
+
+
+
+executables:
+{
+    DolphinIoTDemo = ( DolphinIoTDemoComponent )
+}
+
+
+
+
+
+
+processes:
+{
+    run:
+    {
+        (DolphinIoTDemo)
+    }
+
+}
+
+extern:
+{
+    DolphinIoTDemo.DolphinIoTDemoComponent.dhubIO  // required API
+}
