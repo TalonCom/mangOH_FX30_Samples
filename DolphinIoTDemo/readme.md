@@ -7,9 +7,11 @@ In this document we use a mangOH Yellow platform, but with small changes in plat
 
 *NOTE: This demo does not parses the incoming frames from the serial, neither configures the Dolphin module to commission any device, this is just for a proof of concept to demonstrate the connectivity between self powered devices up to the cloud*
 
-## Requirements
+## How to run the demo
 
-### Software
+This demo was tested using Legato version 19.10.
+
+### Procedure
 
 1. Install Leaf (mangOHYellow Getting Started Guide, apendix A). If using a different platform, then change the target device in step 5. Ensure you can build and test the downloaded applications.
 	- Manual installation can be done by looking into the following resources:
